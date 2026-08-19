@@ -5,6 +5,8 @@ import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { postBySlugQuery } from "@/sanity/lib/queries";
 import PostContent from "@/components/blog/PostContent";
+import Breadcrumbs from "@/components/blog/Breadcrumbs";
+
 
 type PageProps = {
   params: Promise<{
@@ -34,6 +36,10 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-white">
       <article className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <Breadcrumbs
+          category={post.category}
+          title={post.title}
+        />
         {/* Cabeçalho */}
         <header className="mx-auto max-w-4xl">
           {post.category && (
