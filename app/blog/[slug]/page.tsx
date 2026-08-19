@@ -3,10 +3,13 @@ import { notFound } from "next/navigation";
 
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { postBySlugQuery } from "@/sanity/lib/queries";
+import {
+  postBySlugQuery,
+  relatedPostsQuery,
+} from "@/sanity/lib/queries";
+
 import PostContent from "@/components/blog/PostContent";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
-
 
 type PageProps = {
   params: Promise<{
@@ -25,6 +28,16 @@ export default async function PostPage({ params }: PageProps) {
     notFound();
   }
 
+  const relatedPosts = post.category?._id
+    ? await client.fetch(relatedPostsQuery, {
+        slug: post.slug,
+        categoryId: post.category._id,
+      })
+    : [];
+
+  console.log("ARTIGO ATUAL:", post.title);
+  console.log("ARTIGOS RELACIONADOS:", relatedPosts);
+
   const coverImageUrl = post.coverImage
     ? urlFor(post.coverImage)
         .width(1400)
@@ -36,10 +49,12 @@ export default async function PostPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-white">
       <article className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        {/* Breadcrumb */}
         <Breadcrumbs
           category={post.category}
           title={post.title}
         />
+
         {/* Cabeçalho */}
         <header className="mx-auto max-w-4xl">
           {post.category && (
