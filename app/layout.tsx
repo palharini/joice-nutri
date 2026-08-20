@@ -50,6 +50,30 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt:
+          "Joice Benedett - Nutricionista | Nutrição Clínica, Esportiva e Saúde da Mulher",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({

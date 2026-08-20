@@ -9,7 +9,7 @@ type RelatedPost = {
   slug: string;
   excerpt?: string | null;
   publishedAt?: string | null;
-  coverImage?: unknown;
+  coverImage?: any;
   category?: {
     title: string;
     slug: string;
