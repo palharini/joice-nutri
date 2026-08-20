@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { siteConfig } from "@/lib/site";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,11 +19,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Joice Benedett | Nutricionista",
-    template: "%s | Joice Benedett",
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Nutricionista com atuação em Nutrição Clínica, Esportiva e Saúde da Mulher. Conteúdos e acompanhamento nutricional com foco em saúde, equilíbrio e autonomia.",
+
+  description: siteConfig.description,
+
   keywords: [
     "nutricionista",
     "nutrição clínica",
@@ -31,13 +35,17 @@ export const metadata: Metadata = {
     "nutricionista online",
     "Joice Benedett",
   ],
+
   authors: [
     {
-      name: "Joice Benedett",
+      name: siteConfig.author.name,
     },
   ],
-  creator: "Joice Benedett",
+
+  creator: siteConfig.author.name,
+
   category: "health",
+
   robots: {
     index: true,
     follow: true,
