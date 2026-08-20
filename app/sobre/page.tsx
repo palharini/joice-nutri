@@ -11,7 +11,7 @@ export default function SobrePage() {
   return (
     <main>
       {/* Apresentação */}
-      <section className="bg-[#f7f5ef] px-6 py-20 md:py-28">
+      <section className="bg-[#f7f5ef] px-6 py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-4xl">
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
