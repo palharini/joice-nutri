@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
+
 import PostCard from "@/components/blog/PostCard";
 import { client } from "@/sanity/lib/client";
 import { postsQuery } from "@/sanity/lib/queries";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Conteúdos sobre nutrição, alimentação, saúde e bem-estar para ajudar você a fazer escolhas mais conscientes no dia a dia.",
+};
 
 type Post = {
   _id: string;
@@ -23,8 +31,6 @@ type Post = {
 
 export default async function BlogPage() {
   const posts: Post[] = await client.fetch(postsQuery);
-
-  console.log("BLOG - artigos recebidos:", posts);
 
   return (
     <main className="min-h-screen bg-white">

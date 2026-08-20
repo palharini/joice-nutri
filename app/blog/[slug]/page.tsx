@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -17,6 +18,32 @@ type PageProps = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const post = await client.fetch(postBySlugQuery, {
+    slug,
+  });
+
+  if (!post) {
+    return {
+      title: "Artigo não encontrado",
+    };
+  }
+
+  const description =
+    post.seo?.description ||
+    post.excerpt ||
+    "Conteúdo sobre nutrição, alimentação, saúde e bem-estar.";
+
+  return {
+    title: post.seo?.title || post.title,
+    description,
+  };
+}
 
 export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
