@@ -10,6 +10,7 @@ import {
 
 import PostContent from "@/components/blog/PostContent";
 import Breadcrumbs from "@/components/blog/Breadcrumbs";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 type PageProps = {
   params: Promise<{
@@ -34,9 +35,6 @@ export default async function PostPage({ params }: PageProps) {
         categoryId: post.category._id,
       })
     : [];
-
-  console.log("ARTIGO ATUAL:", post.title);
-  console.log("ARTIGOS RELACIONADOS:", relatedPosts);
 
   const coverImageUrl = post.coverImage
     ? urlFor(post.coverImage)
@@ -112,6 +110,9 @@ export default async function PostPage({ params }: PageProps) {
             <PostContent value={post.content} />
           </div>
         )}
+
+        {/* Artigos relacionados */}
+        <RelatedPosts posts={relatedPosts} />
       </article>
     </main>
   );
