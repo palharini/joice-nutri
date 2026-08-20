@@ -172,7 +172,7 @@ export default function ContatoPage() {
       </section>
 
       {/* CTA final */}
-      <section className="bg-white px-6 py-20 md:py-24">
+      <section className="bg-white px-6 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-5xl">
             Pronta para começar?
@@ -186,7 +186,7 @@ export default function ContatoPage() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-zinc-950 px-7 text-sm font-medium text-white transition hover:bg-zinc-700"
+            className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-full bg-zinc-950 px-7 text-sm font-medium text-white transition hover:bg-zinc-700 sm:w-auto"
           >
             Agende pelo WhatsApp
           </a>

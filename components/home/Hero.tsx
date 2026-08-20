@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="overflow-hidden bg-[#f7f5ef]">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:py-24 lg:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-12 md:grid-cols-[1.05fr_0.95fr] md:gap-16 md:py-24 lg:py-28">
         {/* Conteúdo */}
         <div>
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">
