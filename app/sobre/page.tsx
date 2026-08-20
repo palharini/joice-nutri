@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sobre | Joice Benedett Nutricionista",
+  title: "Sobre",
   description:
     "Conheça Joice Benedett, nutricionista com atuação em Nutrição Clínica, Esportiva e Saúde da Mulher.",
 };

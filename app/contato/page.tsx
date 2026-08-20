@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contato | Joice Benedett Nutricionista",
+  title: "Contato",
   description:
     "Entre em contato com Joice Benedett para informações sobre acompanhamento nutricional online.",
 };
@@ -73,9 +73,7 @@ export default function ContatoPage() {
 
             <div className="mt-6 divide-y divide-zinc-200 border-y border-zinc-200">
               <div className="py-5">
-                <p className="text-sm text-zinc-500">
-                  Atendimento
-                </p>
+                <p className="text-sm text-zinc-500">Atendimento</p>
 
                 <p className="mt-1 font-medium text-zinc-950">
                   Online
@@ -83,9 +81,7 @@ export default function ContatoPage() {
               </div>
 
               <div className="py-5">
-                <p className="text-sm text-zinc-500">
-                  Localização
-                </p>
+                <p className="text-sm text-zinc-500">Localização</p>
 
                 <p className="mt-1 font-medium text-zinc-950">
                   Taquara, Rio Grande do Sul
@@ -93,9 +89,7 @@ export default function ContatoPage() {
               </div>
 
               <div className="py-5">
-                <p className="text-sm text-zinc-500">
-                  E-mail
-                </p>
+                <p className="text-sm text-zinc-500">E-mail</p>
 
                 <a
                   href="mailto:joicebenedett22@gmail.com"
@@ -106,9 +100,7 @@ export default function ContatoPage() {
               </div>
 
               <div className="py-5">
-                <p className="text-sm text-zinc-500">
-                  Instagram
-                </p>
+                <p className="text-sm text-zinc-500">Instagram</p>
 
                 <a
                   href="https://www.instagram.com/nutrijoicebenedett/"
@@ -139,9 +131,7 @@ export default function ContatoPage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <div className="rounded-3xl border border-zinc-200 bg-white p-7">
-              <p className="text-sm font-medium text-zinc-500">
-                01
-              </p>
+              <p className="text-sm font-medium text-zinc-500">01</p>
 
               <h3 className="mt-4 text-xl font-semibold text-zinc-950">
                 Entre em contato
@@ -153,9 +143,7 @@ export default function ContatoPage() {
             </div>
 
             <div className="rounded-3xl border border-zinc-200 bg-white p-7">
-              <p className="text-sm font-medium text-zinc-500">
-                02
-              </p>
+              <p className="text-sm font-medium text-zinc-500">02</p>
 
               <h3 className="mt-4 text-xl font-semibold text-zinc-950">
                 Tire suas dúvidas
@@ -168,9 +156,7 @@ export default function ContatoPage() {
             </div>
 
             <div className="rounded-3xl border border-zinc-200 bg-white p-7">
-              <p className="text-sm font-medium text-zinc-500">
-                03
-              </p>
+              <p className="text-sm font-medium text-zinc-500">03</p>
 
               <h3 className="mt-4 text-xl font-semibold text-zinc-950">
                 Agende seu atendimento
