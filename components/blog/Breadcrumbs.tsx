@@ -4,7 +4,7 @@ type BreadcrumbsProps = {
   category?: {
     title: string;
     slug: string;
-  };
+  } | null;
   title: string;
 };
 
@@ -42,13 +42,8 @@ export default function Breadcrumbs({
           <>
             <li aria-hidden="true">/</li>
 
-            <li>
-              <Link
-                href={`/blog/categoria/${category.slug}`}
-                className="transition hover:text-zinc-900"
-              >
-                {category.title}
-              </Link>
+            <li className="text-zinc-600">
+              {category.title}
             </li>
           </>
         )}
@@ -58,6 +53,7 @@ export default function Breadcrumbs({
         <li
           aria-current="page"
           className="max-w-[280px] truncate text-zinc-700"
+          title={title}
         >
           {title}
         </li>

@@ -9,7 +9,7 @@ type FeaturedPostProps = {
     title: string;
     slug: string;
     excerpt?: string | null;
-    coverImage?: unknown;
+    coverImage?: any;
     publishedAt?: string | null;
     category?: {
       title: string;

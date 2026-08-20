@@ -30,6 +30,7 @@ export default function PostCard({ post }: PostCardProps) {
         <Link
           href={`/blog/${post.slug}`}
           className="relative block aspect-[16/10] overflow-hidden bg-zinc-100"
+          aria-label={`Ler artigo: ${post.title}`}
         >
           <Image
             src={urlFor(post.coverImage)
@@ -59,7 +60,12 @@ export default function PostCard({ post }: PostCardProps) {
         )}
 
         <h2 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-900">
-          {post.title}
+          <Link
+            href={`/blog/${post.slug}`}
+            className="transition hover:text-zinc-600"
+          >
+            {post.title}
+          </Link>
         </h2>
 
         {post.excerpt && (

@@ -41,9 +41,13 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
               <Link
                 href={`/blog/${post.slug}`}
                 className="relative block aspect-[16/10] overflow-hidden bg-zinc-100"
+                aria-label={`Ler artigo: ${post.title}`}
               >
                 <Image
-                  src={urlFor(post.coverImage).width(800).height(500).url()}
+                  src={urlFor(post.coverImage)
+                    .width(800)
+                    .height(500)
+                    .url()}
                   alt={post.title}
                   fill
                   className="object-cover transition duration-300 hover:scale-105"

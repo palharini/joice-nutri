@@ -1,7 +1,11 @@
-import { PortableText, type PortableTextComponents } from "@portabletext/react";
+import {
+  PortableText,
+  type PortableTextBlock,
+  type PortableTextComponents,
+} from "@portabletext/react";
 
 type PostContentProps = {
-  value: unknown;
+  value: PortableTextBlock[];
 };
 
 const components: PortableTextComponents = {
@@ -45,18 +49,26 @@ const components: PortableTextComponents = {
 
   marks: {
     link: ({ children, value }) => {
-      const href = value?.href;
+      const href = value?.href as string | undefined;
 
       if (!href) {
         return <>{children}</>;
       }
 
+      const isExternal =
+        href.startsWith("http://") ||
+        href.startsWith("https://");
+
       return (
         <a
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-medium text-zinc-900 underline underline-offset-4 hover:text-zinc-600"
+          {...(isExternal
+            ? {
+                target: "_blank",
+                rel: "noopener noreferrer",
+              }
+            : {})}
+          className="font-medium text-zinc-900 underline underline-offset-4 transition hover:text-zinc-600"
         >
           {children}
         </a>
@@ -68,7 +80,7 @@ const components: PortableTextComponents = {
 export default function PostContent({ value }: PostContentProps) {
   return (
     <div className="prose prose-zinc max-w-none">
-      <PortableText value={value as any} components={components} />
+      <PortableText value={value} components={components} />
     </div>
   );
 }
