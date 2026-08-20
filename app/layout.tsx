@@ -15,8 +15,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Joice Nutri",
-  description: "Conteúdos sobre nutrição, saúde e alimentação.",
+  title: {
+    default: "Joice Benedett | Nutricionista",
+    template: "%s | Joice Benedett",
+  },
+  description:
+    "Nutricionista com atuação em Nutrição Clínica, Esportiva e Saúde da Mulher. Conteúdos e acompanhamento nutricional com foco em saúde, equilíbrio e autonomia.",
+  keywords: [
+    "nutricionista",
+    "nutrição clínica",
+    "nutrição esportiva",
+    "saúde da mulher",
+    "alimentação saudável",
+    "acompanhamento nutricional",
+    "nutricionista online",
+    "Joice Benedett",
+  ],
+  authors: [
+    {
+      name: "Joice Benedett",
+    },
+  ],
+  creator: "Joice Benedett",
+  category: "health",
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
