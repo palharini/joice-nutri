@@ -11,23 +11,25 @@ type PostContentProps = {
 const components: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="mb-6 leading-8 text-zinc-700">{children}</p>
+      <p className="mb-6 text-lg leading-8 text-zinc-700">
+        {children}
+      </p>
     ),
 
     h2: ({ children }) => (
-      <h2 className="mt-12 scroll-mt-24 text-3xl font-semibold tracking-tight text-zinc-900">
+      <h2 className="mt-14 scroll-mt-24 text-3xl font-semibold tracking-tight text-zinc-950">
         {children}
       </h2>
     ),
 
     h3: ({ children }) => (
-      <h3 className="mt-10 scroll-mt-24 text-2xl font-semibold tracking-tight text-zinc-900">
+      <h3 className="mt-10 scroll-mt-24 text-2xl font-semibold tracking-tight text-zinc-950">
         {children}
       </h3>
     ),
 
     blockquote: ({ children }) => (
-      <blockquote className="my-8 border-l-4 border-zinc-300 pl-6 text-xl italic leading-8 text-zinc-600">
+      <blockquote className="my-10 border-l-4 border-zinc-300 pl-6 text-xl italic leading-9 text-zinc-600">
         {children}
       </blockquote>
     ),
@@ -35,13 +37,13 @@ const components: PortableTextComponents = {
 
   list: {
     bullet: ({ children }) => (
-      <ul className="my-6 list-disc space-y-2 pl-6 text-zinc-700">
+      <ul className="my-7 list-disc space-y-3 pl-6 text-lg leading-8 text-zinc-700">
         {children}
       </ul>
     ),
 
     number: ({ children }) => (
-      <ol className="my-6 list-decimal space-y-2 pl-6 text-zinc-700">
+      <ol className="my-7 list-decimal space-y-3 pl-6 text-lg leading-8 text-zinc-700">
         {children}
       </ol>
     ),
@@ -68,7 +70,7 @@ const components: PortableTextComponents = {
                 rel: "noopener noreferrer",
               }
             : {})}
-          className="font-medium text-zinc-900 underline underline-offset-4 transition hover:text-zinc-600"
+          className="font-medium text-zinc-950 underline decoration-zinc-300 underline-offset-4 transition hover:text-zinc-600"
         >
           {children}
         </a>

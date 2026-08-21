@@ -2,18 +2,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-950 text-white">
+    <footer className="border-t border-white/10 bg-zinc-950 text-white">
       <div className="mx-auto max-w-6xl px-6">
         {/* Conteúdo principal */}
-        <div className="grid gap-12 py-14 md:grid-cols-3 md:py-16">
+        <div className="grid gap-12 py-16 md:grid-cols-[1.2fr_0.7fr_1.1fr] md:gap-16 md:py-20">
           {/* Marca */}
-          <div className="md:col-span-1">
+          <div>
             <Link
               href="/"
               className="inline-flex flex-col"
               aria-label="Joice Benedett - Página inicial"
             >
-              <span className="text-xl font-semibold tracking-tight">
+              <span className="text-xl font-semibold tracking-tight text-white">
                 Joice Benedett
               </span>
 
@@ -22,7 +22,7 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="mt-5 max-w-sm text-sm leading-6 text-zinc-400">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-zinc-400">
               Informação e acompanhamento nutricional para uma alimentação
               mais equilibrada, prática e sustentável.
             </p>
@@ -30,58 +30,54 @@ export default function Footer() {
 
           {/* Navegação */}
           <div>
-            <p className="text-sm font-semibold text-white">
-              Navegação
-            </p>
+            <p className="text-sm font-semibold text-white">Navegação</p>
 
             <nav
-              className="mt-5 flex flex-col items-start gap-3"
+              className="mt-6 flex flex-col items-start gap-3.5"
               aria-label="Navegação do rodapé"
             >
               <Link
                 href="/"
-                className="text-sm text-zinc-400 transition hover:text-white"
+                className="text-sm text-zinc-400 transition duration-200 hover:text-white"
               >
                 Início
               </Link>
 
               <Link
                 href="/sobre"
-                className="text-sm text-zinc-400 transition hover:text-white"
+                className="text-sm text-zinc-400 transition duration-200 hover:text-white"
               >
                 Sobre
               </Link>
 
               <Link
                 href="/blog"
-                className="text-sm text-zinc-400 transition hover:text-white"
+                className="text-sm text-zinc-400 transition duration-200 hover:text-white"
               >
                 Blog
               </Link>
 
               <Link
                 href="/contato"
-                className="text-sm text-zinc-400 transition hover:text-white"
+                className="text-sm text-zinc-400 transition duration-200 hover:text-white"
               >
                 Contato
               </Link>
             </nav>
           </div>
 
-          {/* CTA */}
+          {/* Atendimento */}
           <div>
-            <p className="text-sm font-semibold text-white">
-              Atendimento
-            </p>
+            <p className="text-sm font-semibold text-white">Atendimento</p>
 
-            <p className="mt-5 max-w-sm text-sm leading-6 text-zinc-400">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-zinc-400">
               Quer cuidar da sua alimentação de forma individualizada?
               Conheça o acompanhamento nutricional.
             </p>
 
             <Link
               href="/contato"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-zinc-950 transition hover:bg-zinc-200"
+              className="mt-7 inline-flex h-11 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-zinc-950 transition duration-300 hover:-translate-y-0.5 hover:bg-zinc-200"
             >
               Agende uma consulta
             </Link>
@@ -89,15 +85,13 @@ export default function Footer() {
         </div>
 
         {/* Rodapé inferior */}
-        <div className="flex flex-col gap-3 border-t border-zinc-800 py-6 text-xs text-zinc-500 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-white/10 py-6 text-xs leading-5 text-zinc-500 md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} Joice Benedett. Todos os direitos
             reservados.
           </p>
 
-          <p>
-            Conteúdo informativo sobre nutrição e alimentação.
-          </p>
+          <p>Conteúdo informativo sobre nutrição e alimentação.</p>
         </div>
       </div>
     </footer>
